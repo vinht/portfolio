@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#7A5C99"/>
+  <text x="40" y="60" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#fff">To do</text><rect x="40" y="80" width="165" height="66" rx="6" fill="#FFF3B0"/>
+          <rect x="52" y="96" width="96.23497344378148" height="8" fill="rgba(0,0,0,0.3)"/>
+          <rect x="52" y="112" width="91.1986696353176" height="8" fill="rgba(0,0,0,0.2)"/><rect x="40" y="160" width="165" height="66" rx="6" fill="#FFD6A5"/>
+          <rect x="52" y="176" width="106.04056078290593" height="8" fill="rgba(0,0,0,0.3)"/>
+          <rect x="52" y="192" width="73.70507829995131" height="8" fill="rgba(0,0,0,0.2)"/><text x="225" y="60" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#fff">Doing</text><rect x="225" y="80" width="165" height="66" rx="6" fill="#FFD6A5"/>
+          <rect x="237" y="96" width="91.25098728167404" height="8" fill="rgba(0,0,0,0.3)"/>
+          <rect x="237" y="112" width="85.34324309571798" height="8" fill="rgba(0,0,0,0.2)"/><rect x="225" y="160" width="165" height="66" rx="6" fill="#CAFFBF"/>
+          <rect x="237" y="176" width="93.88670973195076" height="8" fill="rgba(0,0,0,0.3)"/>
+          <rect x="237" y="192" width="103.93046489634108" height="8" fill="rgba(0,0,0,0.2)"/><rect x="225" y="240" width="165" height="66" rx="6" fill="#E8DFF5"/>
+          <rect x="237" y="256" width="129.32351280437945" height="8" fill="rgba(0,0,0,0.3)"/>
+          <rect x="237" y="272" width="70.27970320558161" height="8" fill="rgba(0,0,0,0.2)"/><text x="410" y="60" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#fff">Review</text><rect x="410" y="80" width="165" height="66" rx="6" fill="#CAFFBF"/>
+          <rect x="422" y="96" width="120.97177621022416" height="8" fill="rgba(0,0,0,0.3)"/>
+          <rect x="422" y="112" width="102.64276523731778" height="8" fill="rgba(0,0,0,0.2)"/><rect x="410" y="160" width="165" height="66" rx="6" fill="#E8DFF5"/>
+          <rect x="422" y="176" width="86.95534359987609" height="8" fill="rgba(0,0,0,0.3)"/>
+          <rect x="422" y="192" width="68.45988311733115" height="8" fill="rgba(0,0,0,0.2)"/><text x="595" y="60" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#fff">Done</text><rect x="595" y="80" width="165" height="66" rx="6" fill="#E8DFF5"/>
+          <rect x="607" y="96" width="135.25555298442745" height="8" fill="rgba(0,0,0,0.3)"/>
+          <rect x="607" y="112" width="50.07900927219494" height="8" fill="rgba(0,0,0,0.2)"/><rect x="595" y="160" width="165" height="66" rx="6" fill="#FFF3B0"/>
+          <rect x="607" y="176" width="87.90883778031396" height="8" fill="rgba(0,0,0,0.3)"/>
+          <rect x="607" y="192" width="73.83657373666604" height="8" fill="rgba(0,0,0,0.2)"/><rect x="595" y="240" width="165" height="66" rx="6" fill="#FFD6A5"/>
+          <rect x="607" y="256" width="81.29479214609358" height="8" fill="rgba(0,0,0,0.3)"/>
+          <rect x="607" y="272" width="91.57159939481485" height="8" fill="rgba(0,0,0,0.2)"/><rect x="595" y="320" width="165" height="66" rx="6" fill="#CAFFBF"/>
+          <rect x="607" y="336" width="133.87102865328595" height="8" fill="rgba(0,0,0,0.3)"/>
+          <rect x="607" y="352" width="60.37857577687994" height="8" fill="rgba(0,0,0,0.2)"/>
+</svg>

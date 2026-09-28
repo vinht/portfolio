@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#C49A2C"/>
+  <line x1="0" y1="330" x2="800" y2="330" stroke="rgba(255,255,255,0.5)"/>
+      <line x1="0" y1="200" x2="800" y2="200" stroke="rgba(255,255,255,0.5)" stroke-dasharray="6 6"/>
+      <line x1="0" y1="90" x2="800" y2="90" stroke="rgba(255,255,255,0.5)" stroke-dasharray="6 6"/>
+      <text x="400" y="330" text-anchor="middle" font-family="Georgia, serif" font-size="300" fill="#fff">Rg</text>
+      <text x="30" y="324" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#fff">baseline</text>
+      <text x="30" y="194" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#fff">x-height</text>
+      <text x="30" y="84" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#fff">cap height</text>
+</svg>

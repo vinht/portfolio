@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michael Tran — Course projects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4F6F2;
+    --ink: #1F3B2D;
+    --muted: #5E6F65;
+    --rule: #CCD5CE;
+    --highlight: #F2E14C;
+    --pine: #2F6B4F;
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --body: "Newsreader", Georgia, "Times New Roman", serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: var(--pine); text-underline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--pine); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 3rem); }
+
+  /* ---------- Top bar ---------- */
+  .top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 0; font-family: var(--display); font-size: 0.95rem;
+  }
+  .top nav { display: flex; gap: 1.5rem; }
+  .top a { color: var(--ink); text-decoration: none; }
+  .top a:hover { text-decoration: underline; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: clamp(3rem, 10vw, 7rem) 0 clamp(3rem, 7vw, 5rem); }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(3.2rem, 11vw, 8.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+  }
+  .hero h1 .mark {
+    background-image: linear-gradient(var(--highlight), var(--highlight));
+    background-repeat: no-repeat;
+    background-position: 0 88%;
+    background-size: 100% 42%;
+    padding: 0 0.08em;
+    margin: 0 -0.08em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    animation: swipe 0.9s cubic-bezier(.6,.05,.2,1) 0.3s both;
+  }
+  @keyframes swipe { from { background-size: 0% 42%; } to { background-size: 100% 42%; } }
+  .hero p {
+    max-width: 34rem; margin-top: 2rem;
+    font-size: clamp(1.2rem, 2.2vw, 1.45rem); line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.25rem; font-family: var(--display); font-size: 0.95rem; color: var(--muted);
+  }
+
+  /* ---------- Index heading ---------- */
+  .index-head {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1rem;
+    border-bottom: 2px solid var(--ink); padding-bottom: 1rem;
+  }
+  .index-head h2 { font-family: var(--display); font-weight: 600; font-size: 1.6rem; letter-spacing: -0.01em; }
+
+  /* ---------- Project index ---------- */
+  .projects { list-style: none; }
+  .row {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr 200px;
+    gap: 2rem; align-items: center;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .row .code { font-family: var(--display); font-weight: 600; font-size: 1rem; font-variant-numeric: tabular-nums; }
+  .row .term { display: block; font-weight: 400; color: var(--muted); font-size: 0.9rem; }
+  .row h3 { font-family: var(--display); font-weight: 600; font-size: clamp(1.3rem, 2.4vw, 1.7rem); line-height: 1.2; letter-spacing: -0.01em; }
+  .row h3 button {
+    all: unset; cursor: pointer;
+    background-image: linear-gradient(var(--highlight), var(--highlight));
+    background-repeat: no-repeat; background-position: 0 90%; background-size: 0% 35%;
+    transition: background-size 0.35s ease;
+  }
+  .row h3 button:hover, .row h3 button:focus-visible { background-size: 100% 35%; }
+  .row h3 button:focus-visible { outline: 3px solid var(--pine); outline-offset: 4px; }
+  .row .summary { margin-top: 0.35rem; color: var(--muted); max-width: 38rem; }
+  .row .tags { margin-top: 0.6rem; font-family: var(--display); font-size: 0.85rem; color: var(--pine); }
+  .row .thumb { aspect-ratio: 4 / 3; overflow: hidden; border-radius: 4px; cursor: pointer; }
+  .row .thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ---------- About / contact ---------- */
+  .about {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    padding: clamp(4rem, 9vw, 7rem) 0;
+  }
+  .about h2 { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1; letter-spacing: -0.03em; }
+  .about p + p { margin-top: 1rem; }
+  .about ul { list-style: none; margin-top: 1.5rem; font-family: var(--display); }
+  .about li { padding: 0.5rem 0; border-top: 1px solid var(--rule); }
+  footer { padding: 2rem 0 3rem; font-family: var(--display); font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--rule); }
+
+  /* ---------- Project detail dialog ---------- */
+  dialog {
+    width: min(1000px, 100vw); max-width: 100vw; max-height: 100dvh; height: 100dvh;
+    margin: 0 0 0 auto; border: none; padding: 0;
+    background: var(--paper); color: var(--ink);
+  }
+  dialog::backdrop { background: rgba(31, 59, 45, 0.55); }
+  dialog[open] { animation: slidein 0.4s cubic-bezier(.2,.8,.2,1); }
+  @keyframes slidein { from { transform: translateX(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .detail { padding: clamp(1.5rem, 5vw, 3.5rem); }
+  .detail-top { display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
+  .detail .code { font-family: var(--display); font-weight: 600; color: var(--muted); }
+  .close {
+    font-family: var(--display); font-size: 0.95rem; cursor: pointer;
+    background: var(--ink); color: var(--paper); border: none; border-radius: 999px; padding: 0.5rem 1.1rem;
+  }
+  .detail h2 {
+    font-family: var(--display); font-weight: 800;
+    font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1; letter-spacing: -0.03em;
+    margin: 0.75rem 0 1.25rem; max-width: 14ch;
+  }
+  .detail .lede { font-size: 1.35rem; line-height: 1.5; max-width: 36rem; }
+
+  .gallery { margin: 2.5rem 0; }
+  .gallery .main { aspect-ratio: 16 / 10; border-radius: 4px; overflow: hidden; background: var(--rule); }
+  .gallery .main img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery figcaption { font-size: 0.95rem; font-style: italic; color: var(--muted); margin-top: 0.6rem; }
+  .thumbs { display: flex; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap; }
+  .thumbs button { border: none; padding: 0; background: none; cursor: pointer; width: 96px; aspect-ratio: 4/3; border-radius: 3px; overflow: hidden; opacity: 0.55; outline-offset: 2px; }
+  .thumbs button[aria-current="true"] { opacity: 1; outline: 2px solid var(--ink); }
+  .thumbs img { width: 100%; height: 100%; object-fit: cover; }
+
+  .detail-body { display: grid; grid-template-columns: 1fr 15rem; gap: 3rem; }
+  .detail-body section + section { margin-top: 2rem; }
+  .detail-body h3 { font-family: var(--display); font-weight: 600; font-size: 1.25rem; margin-bottom: 0.5rem; }
+  .detail-body p { max-width: 38rem; line-height: 1.7; }
+  .facts { font-family: var(--display); font-size: 0.95rem; }
+  .facts dt { color: var(--muted); font-size: 0.85rem; margin-top: 1.1rem; }
+  .facts dt:first-child { margin-top: 0; }
+  .facts dd a { font-weight: 600; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 760px) {
+    .row { grid-template-columns: 1fr; gap: 0.75rem; }
+    .row .thumb { order: -1; }
+    .about, .detail-body { grid-template-columns: 1fr; gap: 2rem; }
+    .top nav { gap: 1rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <span>Michael Tran</span>
+    <nav>
+      <a href="#work">Projects</a>
+      <a href="#about">About</a>
+      <a href="mailto:michaeltran2005@gmail.com">Email</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1><span class="mark">Michael Tran</span><br>course projects</h1>
+    <p>I study computer science and interaction design. These are the projects I've built for my classes, from compilers to campus signage, with notes on how each one came together.</p>
+    <p class="meta">BSc Computer Science, minor in Design. Northfield University, class of 2027.</p>
+  </section>
+
+  <main id="work">
+    <div class="index-head">
+      <h2>Projects</h2>
+    </div>
+    <ul class="projects"></ul>
+  </main>
+
+  <section class="about" id="about">
+    <h2>About me</h2>
+    <div>
+      <p>I like problems that sit between code and people: making a tool that works, then making it make sense to whoever uses it.</p>
+      <p>Outside class I tutor first-year programming and run the student design collective's zine.</p>
+      <ul>
+        <li><a href="mailto:maya.okafor@example.edu">maya.okafor@example.edu</a></li>
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Download CV (PDF)</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>© 2026 Maya Okafor. Built by hand, hosted for free.</footer>
+</div>
+
+<dialog id="detail" aria-labelledby="d-title">
+  <article class="detail">
+    <div class="detail-top">
+      <span class="code" id="d-code"></span>
+      <button class="close" id="d-close">Close</button>
+    </div>
+    <h2 id="d-title"></h2>
+    <p class="lede" id="d-lede"></p>
+
+    <figure class="gallery">
+      <div class="main"><img id="d-img" alt=""></div>
+      <figcaption id="d-caption"></figcaption>
+      <div class="thumbs" id="d-thumbs"></div>
+    </figure>
+
+    <div class="detail-body">
+      <div id="d-sections"></div>
+      <dl class="facts" id="d-facts"></dl>
+    </div>
+  </article>
+</dialog>
+
+<script>
+/* ==========================================================
+   EDIT YOUR PROJECTS HERE
+   - images: each project has a folder at images/<id>/.
+     Swap in your own files and update src,
+     e.g. { src: "images/tern/1.jpg", caption: "..." }.
+     Leave src empty to show a placeholder.
+   ========================================================== */
+const PROJECTS = [
+  {
+    id: "tern",
+    code: "CS 4120", term: "Spring 2026", area: "Software",
+    title: "Tern: a tiny language that compiles to WebAssembly",
+    summary: "A statically typed teaching language, with a compiler written from scratch in Rust.",
+    tags: ["Rust", "WebAssembly", "Compilers"],
+    color: "#2F6B4F",
+    images: [
+      { src: "images/tern/1.svg", caption: "The online playground: Tern source on the left, generated WebAssembly on the right." },
+      { src: "images/tern/2.svg", caption: "Type errors point at the exact expression and suggest a fix." },
+      { src: "images/tern/3.svg", caption: "Compiler pipeline, from tokens to binary." }
+    ],
+    sections: [
+      { heading: "The brief", body: "Build a working compiler for a language of our own design, targeting any real machine or virtual machine, by the end of the semester." },
+      { heading: "What I built", body: "Tern has integers, booleans, first-class functions, and structs. I wrote the lexer, a recursive-descent parser, a type checker with local inference, and a code generator that emits WebAssembly text format. A small browser playground lets anyone compile and run programs without installing anything." },
+      { heading: "What I learned", body: "Good error messages took longer than code generation. I rewrote the type checker twice to keep track of source positions, and that work made the language far easier for classmates to try." }
+    ],
+    facts: { Role: "Solo project", Duration: "14 weeks", Grade: "A", Links: [["Source on GitHub", "#"], ["Try the playground", "#"]] }
+  },
+  {
+    id: "library",
+    code: "HCI 402", term: "Fall 2025", area: "Design",
+    title: "Finding your way in the campus library",
+    summary: "Field research and a redesigned signage system for a building students kept getting lost in.",
+    tags: ["User research", "Figma", "Wayfinding"],
+    color: "#B5654A",
+    images: [
+      { src: "images/library/1.svg", caption: "Before and after: the third-floor stairwell sign." },
+      { src: "images/library/2.svg", caption: "Journey map from twelve student interviews." },
+      { src: "images/library/3.svg", caption: "Printed prototypes tested on site." }
+    ],
+    sections: [
+      { heading: "The brief", body: "Pick a real space on campus, study how people use it, and propose a design intervention backed by evidence." },
+      { heading: "What we did", body: "Our team of four shadowed students through the library, ran twelve interviews, and timed how long it took to find three specific books. We found that floor numbering and call-number ranges were signed in different places. We designed a single sign family that shows both at every decision point." },
+      { heading: "Result", body: "In a second round of testing with printed prototypes, the average search time dropped from 7 minutes to just under 3. The library has adopted two of our signs for a pilot." }
+    ],
+    facts: { Role: "Research lead, team of 4", Duration: "10 weeks", Tools: "Figma, Miro, Illustrator", Links: [["Read the full report", "#"]] }
+  },
+  {
+    id: "buses",
+    code: "DS 320", term: "Spring 2025", area: "Data",
+    title: "Where the buses run late",
+    summary: "An interactive map of two years of city bus delays, built from open transit data.",
+    tags: ["Python", "D3.js", "Data visualization"],
+    color: "#3D5A80",
+    images: [
+      { src: "images/buses/1.svg", caption: "Delay heat map by stop and hour of day." },
+      { src: "images/buses/2.svg", caption: "Route comparison view." }
+    ],
+    sections: [
+      { heading: "The brief", body: "Tell a clear story with a public dataset of at least one million rows." },
+      { heading: "What I built", body: "I cleaned 4.2 million arrival records with pandas, matched them to scheduled times, and built a D3 map where you can scrub through the day and watch delays build up along each route." },
+      { heading: "What I learned", body: "Most of the work was data cleaning. Around 8% of records had broken timestamps, and deciding how to handle them honestly changed the final conclusions." }
+    ],
+    facts: { Role: "Solo project", Duration: "6 weeks", Tools: "Python, pandas, D3.js", Links: [["View the live map", "#"], ["Notebook on GitHub", "#"]] }
+  },
+  {
+    id: "shelf",
+    code: "SE 350", term: "Fall 2024", area: "Software",
+    title: "Shelf: a textbook swap app for students",
+    summary: "A mobile app that matches students who need a textbook with students who are done with it.",
+    tags: ["React Native", "Firebase", "Team project"],
+    color: "#7A5C99",
+    images: [
+      { src: "images/shelf/1.svg", caption: "Browse, match, and message screens." },
+      { src: "images/shelf/2.svg", caption: "Sprint board from our final two weeks." }
+    ],
+    sections: [
+      { heading: "The brief", body: "Work as a team of five using agile sprints to ship a working product to real users." },
+      { heading: "My part", body: "I owned the matching logic and the messaging feature, and ran our weekly sprint reviews. We launched to 140 students in our department during the last month of term." },
+      { heading: "What I learned", body: "Shipping to real users surfaced problems we never saw in testing, like people listing the wrong edition. Adding an ISBN scanner fixed most of it." }
+    ],
+    facts: { Role: "Backend developer, team of 5", Duration: "12 weeks", Users: "140 students", Links: [["Project write-up", "#"]] }
+  },
+  {
+    id: "specimen",
+    code: "ARTD 201", term: "Spring 2024", area: "Design",
+    title: "Type specimen posters",
+    summary: "A series of three posters exploring a typeface through its history and shapes.",
+    tags: ["Typography", "Print", "InDesign"],
+    color: "#C49A2C",
+    images: [
+      { src: "images/specimen/1.svg", caption: "All three posters as exhibited." },
+      { src: "images/specimen/2.svg", caption: "Detail of the letterform study." }
+    ],
+    sections: [
+      { heading: "The brief", body: "Choose a typeface and design a specimen series that teaches something about it." },
+      { heading: "What I made", body: "Three A2 posters: one on the typeface's origin, one on its letter construction, and one showing it in use. They were printed with risograph in two colors and shown in the end-of-year exhibition." }
+    ],
+    facts: { Role: "Solo project", Duration: "5 weeks", Tools: "InDesign, risograph" }
+  }
+];
+
+/* ---------- Rendering (no need to edit below) ---------- */
+const $ = s => document.querySelector(s);
+
+function placeholder(color, label) {
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'>
+    <rect width='800' height='500' fill='${color}'/>
+    <g fill='none' stroke='rgba(255,255,255,0.18)' stroke-width='2'>
+      ${Array.from({length: 12}, (_, i) => `<line x1='${i*80-200}' y1='500' x2='${i*80+100}' y2='0'/>`).join("")}
+    </g>
+    <text x='40' y='460' font-family='Arial, sans-serif' font-size='26' fill='rgba(255,255,255,0.85)'>${label}</text>
+  </svg>`;
+  return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+}
+const imgSrc = (p, i) => p.images[i].src || placeholder(p.color, `Image ${i + 1}: replace with your own`);
+
+function renderList() {
+  $(".projects").innerHTML = PROJECTS.map(p => `
+    <li class="row">
+      <div class="code">${p.code}<span class="term">${p.term}</span></div>
+      <div>
+        <h3><button data-open="${p.id}">${p.title}</button></h3>
+        <p class="summary">${p.summary}</p>
+        <p class="tags">${p.tags.join(", ")}</p>
+      </div>
+      <div class="thumb" data-open="${p.id}" aria-hidden="true"><img src="${imgSrc(p, 0)}" alt=""></div>
+    </li>`).join("");
+}
+
+function showImage(p, i) {
+  $("#d-img").src = imgSrc(p, i);
+  $("#d-img").alt = p.images[i].caption;
+  $("#d-caption").textContent = p.images[i].caption;
+  document.querySelectorAll("#d-thumbs button").forEach((b, j) => b.setAttribute("aria-current", j === i));
+}
+
+function openProject(id) {
+  const p = PROJECTS.find(x => x.id === id);
+  $("#d-code").textContent = `${p.code}, ${p.term}`;
+  $("#d-title").textContent = p.title;
+  $("#d-lede").textContent = p.summary;
+  $("#d-thumbs").innerHTML = p.images.length > 1 ? p.images.map((img, i) =>
+    `<button data-img="${i}" aria-label="Show image ${i + 1}"><img src="${imgSrc(p, i)}" alt=""></button>`).join("") : "";
+  $("#d-thumbs").onclick = e => { const b = e.target.closest("button"); if (b) showImage(p, +b.dataset.img); };
+  showImage(p, 0);
+  $("#d-sections").innerHTML = p.sections.map(s =>
+    `<section><h3>${s.heading}</h3><p>${s.body}</p></section>`).join("");
+  $("#d-facts").innerHTML = Object.entries(p.facts).map(([k, v]) =>
+    `<dt>${k}</dt><dd>${Array.isArray(v) ? v.map(([t, href]) => `<a href="${href}">${t}</a>`).join("<br>") : v}</dd>`).join("");
+  const d = $("#detail");
+  d.showModal();
+  d.scrollTop = 0;
+}
+
+$(".projects").addEventListener("click", e => {
+  const t = e.target.closest("[data-open]"); if (t) openProject(t.dataset.open);
+});
+$("#d-close").addEventListener("click", () => $("#detail").close());
+$("#detail").addEventListener("click", e => { if (e.target.id === "detail") e.target.close(); });
+
+renderList();
+</script>
+</body>
+</html>
